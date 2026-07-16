@@ -602,3 +602,51 @@ export function propCloudcat() {
     </g>
   </svg>`;
 }
+
+/* Side-view Nozzle for the trail. Two pose groups toggled by CSS. */
+export function walkingCat() {
+  const p = { body: '#e8b07a', dark: '#c98a52', belly: '#f5d8b8', nose: '#e8b4b8' };
+  return `
+  <svg viewBox="0 0 130 100" xmlns="http://www.w3.org/2000/svg" class="walker__sprite">
+    <g class="pose pose--walk">
+      <path class="walker-tail" d="M18 52 Q2 44 6 26 Q8 16 16 18" fill="none" stroke="${p.dark}" stroke-width="7" stroke-linecap="round"/>
+      <g class="walker-leg walker-leg--b"><rect x="34" y="60" width="8" height="26" rx="4" fill="${p.body}" stroke="${p.dark}" stroke-width="2.5"/></g>
+      <g class="walker-leg walker-leg--a"><rect x="46" y="60" width="8" height="26" rx="4" fill="${p.body}" stroke="${p.dark}" stroke-width="2.5"/></g>
+      <ellipse cx="55" cy="55" rx="32" ry="17" fill="${p.body}" stroke="${p.dark}" stroke-width="2.5"/>
+      <ellipse cx="55" cy="62" rx="22" ry="9" fill="${p.belly}" opacity="0.7"/>
+      <g class="walker-leg walker-leg--a"><rect x="62" y="60" width="8" height="26" rx="4" fill="${p.body}" stroke="${p.dark}" stroke-width="2.5"/></g>
+      <g class="walker-leg walker-leg--b"><rect x="74" y="60" width="8" height="26" rx="4" fill="${p.body}" stroke="${p.dark}" stroke-width="2.5"/></g>
+      <g class="walker-head">
+        <circle cx="95" cy="36" r="17" fill="${p.body}" stroke="${p.dark}" stroke-width="2.5"/>
+        <path d="M84 24 L80 10 L92 20 Z" fill="${p.body}" stroke="${p.dark}" stroke-width="2.5"/>
+        <path d="M104 22 L110 9 L96 18 Z" fill="${p.body}" stroke="${p.dark}" stroke-width="2.5"/>
+        <path d="M96 34 Q101 31 106 34" stroke="#3d3528" stroke-width="2.2" fill="none" stroke-linecap="round"/>
+        <path d="M108 41 L104 44 L110 45 Z" fill="${p.nose}" stroke="${p.dark}" stroke-width="1.4"/>
+        <path class="walker-mouth" d="M106 47 Q103 50 100 48" stroke="${p.dark}" stroke-width="1.6" fill="none" stroke-linecap="round"/>
+        <g stroke="${p.dark}" stroke-width="1.3" stroke-linecap="round">
+          <line x1="86" y1="41" x2="76" y2="40"/><line x1="86" y1="45" x2="77" y2="47"/>
+        </g>
+      </g>
+    </g>
+    <g class="pose pose--sit">
+      <path class="walker-tail" d="M28 84 Q10 82 12 66 Q13 58 20 59" fill="none" stroke="${p.dark}" stroke-width="7" stroke-linecap="round"/>
+      <ellipse cx="52" cy="66" rx="26" ry="24" fill="${p.body}" stroke="${p.dark}" stroke-width="2.5"/>
+      <ellipse cx="52" cy="74" rx="15" ry="13" fill="${p.belly}" opacity="0.7"/>
+      <rect x="40" y="72" width="8" height="18" rx="4" fill="${p.body}" stroke="${p.dark}" stroke-width="2.5"/>
+      <rect x="56" y="72" width="8" height="18" rx="4" fill="${p.body}" stroke="${p.dark}" stroke-width="2.5"/>
+      <g class="walker-head">
+        <circle cx="60" cy="34" r="18" fill="${p.body}" stroke="${p.dark}" stroke-width="2.5"/>
+        <path d="M48 22 L44 6 L57 17 Z" fill="${p.body}" stroke="${p.dark}" stroke-width="2.5"/>
+        <path d="M70 20 L77 5 L62 16 Z" fill="${p.body}" stroke="${p.dark}" stroke-width="2.5"/>
+        <path d="M52 33 Q56 30 60 33" stroke="#3d3528" stroke-width="2.2" fill="none" stroke-linecap="round"/>
+        <path d="M63 33 Q67 30 71 33" stroke="#3d3528" stroke-width="2.2" fill="none" stroke-linecap="round"/>
+        <path d="M61 40 L58 43 L64 43 Z" fill="${p.nose}" stroke="${p.dark}" stroke-width="1.4"/>
+        <ellipse class="walker-mouth walker-mouth--yawn" cx="61" cy="47" rx="4" ry="5" fill="#8a5a3f" opacity="0"/>
+        <g stroke="${p.dark}" stroke-width="1.3" stroke-linecap="round">
+          <line x1="46" y1="40" x2="36" y2="39"/><line x1="46" y1="44" x2="37" y2="46"/>
+          <line x1="74" y1="40" x2="84" y2="39"/><line x1="74" y1="44" x2="83" y2="46"/>
+        </g>
+      </g>
+    </g>
+  </svg>`;
+}
