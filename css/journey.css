@@ -462,3 +462,21 @@
 /* clouds drift while their region is active */
 .region.active .cloud { animation: drift 70s linear infinite; }
 @keyframes drift { from { margin-left: -6vw; } to { margin-left: 12vw; } }
+
+/* ---------- Reduced motion ---------- */
+body.reduced-motion .walker { display: none; }
+body.reduced-motion .trail .paw { opacity: 0.5; transition: none; }
+body.reduced-motion .cloud,
+body.reduced-motion .star,
+body.reduced-motion .firefly,
+body.reduced-motion .spot__tease-tail,
+body.reduced-motion .cat-body,
+body.reduced-motion .cloud-cat.found,
+body.reduced-motion .scroll-hint__arrow::after { animation: none !important; }
+body.reduced-motion .reveal { opacity: 1; transform: none; transition: none; }
+body.reduced-motion .tuft { transform: none !important; }
+body.reduced-motion .hidden-spot .spot__cat,
+body.reduced-motion .spot__curtain,
+body.reduced-motion .spot__door,
+body.reduced-motion .spot__lid,
+body.reduced-motion .hud-plaque { transition: none; }

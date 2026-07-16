@@ -191,6 +191,13 @@ function initCats(onWake) {
         clearTimeout(cat._napTimer);
         cat._napTimer = setTimeout(sleep, 1800);
       });
+      if (cat.dataset.spotId) {
+        cat.setAttribute("tabindex", "0");
+        cat.setAttribute("role", "img");
+        cat.setAttribute("aria-label", `A sleeping cat: ${cat.dataset.bubble || "zzz"}`);
+        cat.addEventListener("focus", wake);
+        cat.addEventListener("blur", sleep);
+      }
       // spawn Zzz while sleeping
       const spawnZzz = () => {
         if (cat.classList.contains("awake")) return;
