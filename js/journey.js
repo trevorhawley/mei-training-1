@@ -209,6 +209,35 @@ export function initJourney() {
     walker.remove(); // reduced motion: no walker
   }
 
+  /* ---- parallax ---- */
+  const isMobile = matchMedia("(max-width: 760px)").matches;
+  if (!reduced) {
+    const bands = [...journey.querySelectorAll("[data-depth]")]
+      .map((el) => ({
+        el,
+        coef: el.dataset.depth === "near" ? (isMobile ? 0 : -0.1) : 0.14,
+      }))
+      .filter((b) => b.coef !== 0);
+
+    onFrame(() => {
+      const vh = window.innerHeight;
+      bands.forEach((b) => {
+        const r = b.el.getBoundingClientRect();
+        if (r.bottom < -vh || r.top > vh * 2) return;
+        const delta = (r.top + r.height / 2 - vh / 2) / vh;
+        b.el.style.transform = `translate3d(0, ${(delta * b.coef * 100).toFixed(1)}px, 0)`;
+      });
+    });
+  }
+
+  /* ---- region activation (pause offscreen ambient animation) ---- */
+  const io = new IntersectionObserver(
+    (entries) =>
+      entries.forEach((e) => e.target.classList.toggle("active", e.isIntersecting)),
+    { rootMargin: "20% 0px" }
+  );
+  journey.querySelectorAll(".region").forEach((r) => io.observe(r));
+
   /* ---- per-frame scroll work ---- */
   let dirty = true;
   let lastScrollY = window.scrollY;

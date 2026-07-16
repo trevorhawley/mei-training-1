@@ -449,3 +449,16 @@
   background: var(--sage); color: #fff;
   font-weight: 700; font-size: 0.9rem; line-height: 26px; text-align: center;
 }
+
+/* ---------- Foreground tufts / parallax ---------- */
+.tuft { position: absolute; width: clamp(50px, 6vw, 90px); z-index: 5; opacity: 0.9; will-change: transform; }
+
+/* ambient animations only run in active regions */
+.region:not(.active) .star,
+.region:not(.active) .firefly,
+.region:not(.active) .spot__tease-tail,
+.region:not(.active) .cat-body { animation-play-state: paused; }
+
+/* clouds drift while their region is active */
+.region.active .cloud { animation: drift 70s linear infinite; }
+@keyframes drift { from { margin-left: -6vw; } to { margin-left: 12vw; } }
