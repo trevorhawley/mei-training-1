@@ -106,5 +106,24 @@ export function initPurr() {
     });
   }
 
-  return { enable, disable, setIntensity };
+  /* Soft two-note chime for the discovery game (only when purr is on) */
+  function chime() {
+    if (!enabled) return;
+    if (!ctx) build();
+    const t = ctx.currentTime;
+    const o = ctx.createOscillator();
+    const g = ctx.createGain();
+    o.type = 'sine';
+    o.frequency.setValueAtTime(880, t);
+    o.frequency.setValueAtTime(1318.5, t + 0.09);
+    g.gain.setValueAtTime(0.0001, t);
+    g.gain.exponentialRampToValueAtTime(0.12, t + 0.02);
+    g.gain.exponentialRampToValueAtTime(0.0001, t + 0.35);
+    o.connect(g);
+    g.connect(ctx.destination);
+    o.start(t);
+    o.stop(t + 0.4);
+  }
+
+  return { enable, disable, setIntensity, chime };
 }
