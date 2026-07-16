@@ -650,3 +650,123 @@ export function walkingCat() {
     </g>
   </svg>`;
 }
+
+/* ============================================================
+   Hidden spots (discovery game)
+   Each returns SVG with a .spot__cat group revealed when the
+   parent button gets .found. Tease parts animate on hover/focus.
+   Cats are drawn BEFORE cover art so they hide behind it.
+   ============================================================ */
+
+export function spotBush() {
+  return `
+  <svg viewBox="0 0 220 190" xmlns="http://www.w3.org/2000/svg">
+    <g class="spot__cat">
+      <circle cx="112" cy="76" r="26" fill="#b8b8c0" stroke="#909098" stroke-width="2.5"/>
+      <path d="M96 60 L92 42 L106 54 Z" fill="#b8b8c0" stroke="#909098" stroke-width="2.5"/>
+      <path d="M126 58 L134 41 L118 52 Z" fill="#b8b8c0" stroke="#909098" stroke-width="2.5"/>
+      <ellipse cx="104" cy="74" rx="3.4" ry="5" fill="#3d3528"/>
+      <ellipse cx="120" cy="74" rx="3.4" ry="5" fill="#3d3528"/>
+      <path d="M112 84 L109 87 L115 87 Z" fill="#e8b4b8" stroke="#909098" stroke-width="1.4"/>
+    </g>
+    <g class="spot__shake">
+      <ellipse cx="70" cy="130" rx="62" ry="46" fill="#7a9e7e" stroke="#5c7e60" stroke-width="3"/>
+      <ellipse cx="140" cy="138" rx="66" ry="44" fill="#8aac8a" stroke="#5c7e60" stroke-width="3"/>
+      <ellipse cx="108" cy="112" rx="52" ry="40" fill="#96b492" stroke="#5c7e60" stroke-width="3"/>
+      <path d="M84 104 q6 -12 2 -20 M118 98 q8 -10 4 -20 M140 116 q10 -8 8 -18" stroke="#5c7e60" stroke-width="2" fill="none" stroke-linecap="round"/>
+    </g>
+  </svg>`;
+}
+
+export function spotMailbox() {
+  return `
+  <svg viewBox="0 0 200 250" xmlns="http://www.w3.org/2000/svg">
+    <rect x="88" y="120" width="12" height="120" fill="#a86a3f" stroke="#8a6a48" stroke-width="2.5"/>
+    <g class="spot__flag">
+      <rect x="140" y="34" width="8" height="34" rx="3" fill="#c96a5a" stroke="#8a5040" stroke-width="2"/>
+      <rect x="132" y="28" width="26" height="14" rx="4" fill="#c96a5a" stroke="#8a5040" stroke-width="2"/>
+    </g>
+    <path d="M40 70 Q40 40 70 40 L130 40 Q160 40 160 70 L160 120 L40 120 Z" fill="#9bb4c0" stroke="#6a8490" stroke-width="3"/>
+    <g class="spot__cat">
+      <circle cx="100" cy="86" r="22" fill="#f0e4cc" stroke="#d4c4a8" stroke-width="2.5"/>
+      <path d="M86 72 L82 56 L95 66 Z" fill="#f0e4cc" stroke="#d4c4a8" stroke-width="2.5"/>
+      <path d="M112 70 L119 55 L104 65 Z" fill="#f0e4cc" stroke="#d4c4a8" stroke-width="2.5"/>
+      <ellipse cx="93" cy="84" rx="3" ry="4.5" fill="#3d3528"/>
+      <ellipse cx="107" cy="84" rx="3" ry="4.5" fill="#3d3528"/>
+      <path d="M100 92 L97 95 L103 95 Z" fill="#e8b4b8"/>
+    </g>
+    <g class="spot__door">
+      <path d="M46 70 Q46 46 70 46 L130 46 Q154 46 154 70 L154 114 L46 114 Z" fill="#b0c6d0" stroke="#6a8490" stroke-width="3"/>
+      <circle cx="100" cy="92" r="5" fill="#6a8490"/>
+    </g>
+    <path class="spot__tease-tail" d="M120 118 q10 26 -2 44 q-8 12 -18 8" fill="none" stroke="#e8d0a8" stroke-width="9" stroke-linecap="round"/>
+  </svg>`;
+}
+
+export function spotCurtain() {
+  return `
+  <svg viewBox="0 0 240 230" xmlns="http://www.w3.org/2000/svg">
+    <rect x="14" y="14" width="212" height="180" rx="8" fill="#f6dfb4" stroke="#a89c8a" stroke-width="5"/>
+    <line x1="120" y1="14" x2="120" y2="194" stroke="#a89c8a" stroke-width="3" opacity="0.5"/>
+    <g class="spot__cat">
+      <ellipse cx="150" cy="172" rx="46" ry="24" fill="#f0e4cc" stroke="#d4c4a8" stroke-width="2.5"/>
+      <ellipse cx="150" cy="164" rx="20" ry="14" fill="#e8b07a" stroke="#c98a52" stroke-width="2" opacity="0.8"/>
+      <circle cx="178" cy="160" r="17" fill="#f0e4cc" stroke="#d4c4a8" stroke-width="2.5"/>
+      <path d="M168 148 L165 134 L176 144 Z" fill="#4a4250" stroke="#322a38" stroke-width="2"/>
+      <path d="M188 146 L194 133 L181 142 Z" fill="#f0e4cc" stroke="#d4c4a8" stroke-width="2"/>
+      <path d="M170 158 Q175 155 180 158" stroke="#3d3528" stroke-width="2" fill="none" stroke-linecap="round"/>
+      <path d="M182 158 Q187 155 192 158" stroke="#3d3528" stroke-width="2" fill="none" stroke-linecap="round"/>
+    </g>
+    <rect x="0" y="194" width="240" height="16" rx="6" fill="#d4c4a8" stroke="#a89c8a" stroke-width="2.5"/>
+    <g class="spot__curtain">
+      <path d="M20 10 L150 10 L150 160 Q140 178 118 168 Q96 182 76 168 Q52 180 34 166 Q22 172 20 160 Z"
+            fill="#e8b4b8" stroke="#c48890" stroke-width="3"/>
+      <path d="M55 12 Q60 90 50 160 M95 12 Q100 90 92 164 M130 12 Q134 80 128 160" stroke="#c48890" stroke-width="2" fill="none" opacity="0.5"/>
+    </g>
+    <rect x="6" y="4" width="228" height="10" rx="5" fill="#a86a3f" stroke="#8a6a48" stroke-width="2"/>
+  </svg>`;
+}
+
+export function spotBasket() {
+  return `
+  <svg viewBox="0 0 220 210" xmlns="http://www.w3.org/2000/svg">
+    <text class="spot__zzz" x="150" y="52" font-size="20" fill="#a89c8a" opacity="0.7" font-family="serif">z</text>
+    <text class="spot__zzz" x="168" y="34" font-size="14" fill="#a89c8a" opacity="0.5" font-family="serif">z</text>
+    <g class="spot__cat">
+      <circle cx="110" cy="92" r="24" fill="#4a4250" stroke="#322a38" stroke-width="2.5"/>
+      <path d="M94 78 L90 60 L104 72 Z" fill="#4a4250" stroke="#322a38" stroke-width="2.5"/>
+      <path d="M124 76 L132 59 L116 70 Z" fill="#4a4250" stroke="#322a38" stroke-width="2.5"/>
+      <ellipse cx="102" cy="90" rx="3.2" ry="5" fill="#e8c97a"/>
+      <ellipse cx="118" cy="90" rx="3.2" ry="5" fill="#e8c97a"/>
+      <path d="M110 100 L107 103 L113 103 Z" fill="#e8b4b8"/>
+    </g>
+    <path d="M40 110 L180 110 L166 190 Q110 202 54 190 Z" fill="#d4a878" stroke="#8a6a48" stroke-width="3"/>
+    <path d="M46 130 L174 130 M50 152 L170 152 M54 172 L166 172" stroke="#8a6a48" stroke-width="2" opacity="0.5"/>
+    <g class="spot__lid">
+      <ellipse cx="110" cy="106" rx="76" ry="14" fill="#c89a6a" stroke="#8a6a48" stroke-width="3"/>
+      <ellipse cx="110" cy="102" rx="18" ry="6" fill="#a86a3f" stroke="#8a6a48" stroke-width="2"/>
+    </g>
+  </svg>`;
+}
+
+export function spotTree() {
+  return `
+  <svg viewBox="0 0 260 330" xmlns="http://www.w3.org/2000/svg">
+    <path d="M118 330 L118 210 Q116 170 100 150 M126 330 L126 200 Q130 168 148 150" fill="none" stroke="#8a6a48" stroke-width="16" stroke-linecap="round"/>
+    <g class="spot__cat">
+      <circle cx="150" cy="96" r="24" fill="#e8b07a" stroke="#c98a52" stroke-width="2.5"/>
+      <path d="M134 82 L130 64 L144 76 Z" fill="#e8b07a" stroke="#c98a52" stroke-width="2.5"/>
+      <path d="M164 80 L172 63 L156 74 Z" fill="#e8b07a" stroke="#c98a52" stroke-width="2.5"/>
+      <ellipse cx="142" cy="94" rx="3.2" ry="5" fill="#3d3528"/>
+      <ellipse cx="158" cy="94" rx="3.2" ry="5" fill="#3d3528"/>
+      <ellipse cx="128" cy="116" rx="10" ry="7" fill="#e8b07a" stroke="#c98a52" stroke-width="2.5"/>
+      <ellipse cx="172" cy="116" rx="10" ry="7" fill="#e8b07a" stroke="#c98a52" stroke-width="2.5"/>
+    </g>
+    <g class="spot__shake">
+      <ellipse cx="90" cy="120" rx="72" ry="52" fill="#7a9e7e" stroke="#5c7e60" stroke-width="3"/>
+      <ellipse cx="180" cy="130" rx="66" ry="48" fill="#8aac8a" stroke="#5c7e60" stroke-width="3"/>
+      <ellipse cx="134" cy="88" rx="64" ry="46" fill="#96b492" stroke="#5c7e60" stroke-width="3"/>
+    </g>
+    <path class="spot__tease-tail" d="M186 158 q14 34 0 60 q-10 20 -26 16" fill="none" stroke="#e8b07a" stroke-width="10" stroke-linecap="round"/>
+  </svg>`;
+}

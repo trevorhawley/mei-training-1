@@ -348,3 +348,65 @@
   0%, 55%, 100% { opacity: 0; transform: scaleY(0.2); }
   65%, 85% { opacity: 1; transform: scaleY(1); }
 }
+
+/* ---------- Hidden spot interactions ---------- */
+.hidden-spot .spot__cat { transition: transform 0.45s cubic-bezier(0.34, 1.56, 0.64, 1), opacity 0.3s; }
+
+/* resting (hidden) positions */
+.hidden-spot--bush    .spot__cat { transform: translateY(58px); opacity: 0; }
+.hidden-spot--tree    .spot__cat { transform: translateY(64px); opacity: 0; }
+.hidden-spot--mailbox .spot__cat { opacity: 0; }
+.hidden-spot--basket  .spot__cat { transform: translateY(34px); opacity: 0; }
+.hidden-spot--curtain .spot__cat { opacity: 1; } /* covered by curtain */
+
+/* teases */
+@keyframes rustle { 0%, 100% { transform: rotate(0); } 25% { transform: rotate(1.6deg); } 75% { transform: rotate(-1.6deg); } }
+.spot__shake { transform-box: fill-box; transform-origin: 50% 90%; }
+.hidden-spot:hover .spot__shake,
+.hidden-spot:focus-visible .spot__shake { animation: rustle 0.35s ease-in-out 2; }
+
+@keyframes sway { 0%, 100% { transform: rotate(0); } 50% { transform: rotate(7deg); } }
+.spot__tease-tail { transform-box: fill-box; transform-origin: 50% 0%; animation: sway 3.4s ease-in-out infinite; }
+.hidden-spot:hover .spot__tease-tail,
+.hidden-spot:focus-visible .spot__tease-tail { animation-duration: 1.1s; }
+
+.spot__flag { transform-box: fill-box; transform-origin: 50% 100%; }
+.hidden-spot:hover .spot__flag,
+.hidden-spot:focus-visible .spot__flag { animation: sway 0.8s ease-in-out infinite; }
+
+.spot__curtain { transition: transform 0.5s ease; transform-box: fill-box; transform-origin: 0% 0%; }
+.hidden-spot:hover .spot__curtain,
+.hidden-spot:focus-visible .spot__curtain { transform: translateX(-7px); }
+
+.spot__lid { transition: transform 0.4s ease; transform-box: fill-box; transform-origin: 0% 50%; }
+.hidden-spot:hover .spot__lid,
+.hidden-spot:focus-visible .spot__lid { transform: rotate(-6deg); }
+
+/* found (reveals) */
+.hidden-spot.found .spot__cat { transform: translateY(0); opacity: 1; }
+.hidden-spot--bush.found   .spot__cat { transform: translateY(-38px); }
+.hidden-spot--tree.found   .spot__cat { transform: translateY(-26px); }
+.hidden-spot--basket.found .spot__cat { transform: translateY(-20px); }
+.hidden-spot--mailbox.found .spot__door { transform: rotate(-78deg); transition: transform 0.5s cubic-bezier(0.34, 1.56, 0.64, 1); }
+.spot__door { transform-box: fill-box; transform-origin: 50% 100%; }
+.hidden-spot--mailbox.found .spot__tease-tail { opacity: 0; transition: opacity 0.3s; }
+.hidden-spot--curtain.found .spot__curtain { transform: translateX(-62%) scaleX(0.4); }
+.hidden-spot--basket.found .spot__lid { transform: rotate(-40deg) translateY(-6px); }
+.hidden-spot--basket.found .spot__zzz { opacity: 0; }
+.hidden-spot.found .spot__shake,
+.hidden-spot.found .spot__tease-tail { animation: none; }
+
+/* found badge */
+.hidden-spot::after {
+  content: '✓';
+  position: absolute; top: -6px; right: -6px;
+  width: 26px; height: 26px; border-radius: 50%;
+  background: var(--sage); color: #fff;
+  font-weight: 700; font-size: 0.9rem; line-height: 26px;
+  transform: scale(0); transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+.hidden-spot.found::after { transform: scale(1); }
+
+/* bubbles on spots */
+.hidden-spot .bubble { top: -14px; left: 50%; transform: translate(-50%, 6px) scale(0.9); }
+.hidden-spot .bubble.show { transform: translate(-50%, 0) scale(1); }
