@@ -681,6 +681,7 @@ export function spotBush() {
 export function spotMailbox() {
   return `
   <svg viewBox="0 0 200 250" xmlns="http://www.w3.org/2000/svg">
+    <ellipse cx="96" cy="242" rx="52" ry="8" fill="#3d3528" opacity="0.08"/>
     <rect x="88" y="120" width="12" height="120" fill="#a86a3f" stroke="#8a6a48" stroke-width="2.5"/>
     <g class="spot__flag">
       <rect x="140" y="34" width="8" height="34" rx="3" fill="#c96a5a" stroke="#8a5040" stroke-width="2"/>
@@ -740,6 +741,7 @@ export function spotBasket() {
       <ellipse cx="118" cy="90" rx="3.2" ry="5" fill="#e8c97a"/>
       <path d="M110 100 L107 103 L113 103 Z" fill="#e8b4b8"/>
     </g>
+    <ellipse cx="110" cy="194" rx="64" ry="9" fill="#3d3528" opacity="0.08"/>
     <path d="M40 110 L180 110 L166 190 Q110 202 54 190 Z" fill="#d4a878" stroke="#8a6a48" stroke-width="3"/>
     <path d="M46 130 L174 130 M50 152 L170 152 M54 172 L166 172" stroke="#8a6a48" stroke-width="2" opacity="0.5"/>
     <g class="spot__lid">
