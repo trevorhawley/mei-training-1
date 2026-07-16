@@ -1,0 +1,136 @@
+/* ============================================================
+   Scroll Journey — Home page parallax scenes
+   ============================================================ */
+
+.journey { position: relative; }
+
+/* Sticky scene viewport */
+.scene {
+  position: relative;
+  min-height: 100vh;
+  display: flex; align-items: center; justify-content: center;
+  overflow: hidden;
+}
+
+/* Parallax layers */
+.layer {
+  position: absolute; inset: 0;
+  display: flex; align-items: center; justify-content: center;
+  will-change: transform;
+}
+.layer svg { width: 100%; height: 100%; object-fit: cover; }
+
+/* Scene caption */
+.scene__caption {
+  position: relative; z-index: 3;
+  max-width: 420px; text-align: center;
+  background: rgba(255,253,248,0.82); backdrop-filter: blur(6px);
+  padding: 1.4rem 1.8rem; border-radius: var(--radius);
+  box-shadow: 0 4px 24px var(--shadow);
+  margin: 0 1rem;
+}
+.scene__caption .eyebrow { display: block; margin-bottom: 0.4rem; }
+.scene__caption p { font-size: 0.95rem; color: var(--ink-soft); }
+
+/* The cat — interactive */
+.scene__cat {
+  position: relative; z-index: 4;
+  width: clamp(220px, 38vw, 380px);
+  cursor: none;
+}
+.scene__cat svg { width: 100%; height: auto; overflow: visible; }
+
+/* Cat eye blink: eyes are open by default (sleeping = closed).
+   On hover, eyes open then blink. */
+.cat-eye-lid { transition: transform 0.3s ease; transform-origin: center; }
+.scene__cat .cat-eye { opacity: 0; transition: opacity 0.25s; }
+.scene__cat .cat-whisker { transition: transform 0.3s; transform-origin: center; }
+.scene__cat .cat-body { transition: transform 0.4s ease; transform-origin: center bottom; }
+
+/* Sleeping = eyes closed. On hover wake up. */
+.scene__cat.awake .cat-eye { opacity: 1; animation: blink 4s ease-in-out infinite; }
+.scene__cat.awake .cat-eye-lid { transform: scaleY(0); }
+.scene__cat.awake .cat-body { transform: translateY(-4px) rotate(-1deg); }
+.scene__cat.awake .cat-whisker { transform: rotate(3deg); }
+
+@keyframes blink {
+  0%, 92%, 100% { transform: scaleY(1); }
+  95% { transform: scaleY(0.1); }
+}
+
+/* Gentle breathing while asleep */
+.scene__cat .cat-body { animation: breathe 3.5s ease-in-out infinite; }
+@keyframes breathe {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.015); }
+}
+.scene__cat.awake .cat-body { animation: none; }
+
+/* Floating particles (dust motes / Zzz) */
+.zzz {
+  position: absolute; font-family: var(--font-display);
+  color: var(--ink-faint); opacity: 0; pointer-events: none;
+  animation: floatZ 3s ease-out infinite;
+}
+@keyframes floatZ {
+  0% { opacity: 0; transform: translate(0, 0) scale(0.8); }
+  20% { opacity: 0.6; }
+  100% { opacity: 0; transform: translate(20px, -50px) scale(1.2); }
+}
+
+/* Hero */
+.hero {
+  position: relative; min-height: 100vh;
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  text-align: center; overflow: hidden;
+  background: linear-gradient(180deg, #f3ebde 0%, #faf6f0 100%);
+}
+.hero__bg { position: absolute; inset: 0; z-index: 0; }
+.hero__content { position: relative; z-index: 2; padding: 0 1.5rem; }
+.hero__title { margin-bottom: 0.5rem; }
+.hero__title .accent { color: var(--terracotta); }
+.hero__cat { width: clamp(180px, 30vw, 300px); margin: 1.5rem auto; position: relative; z-index: 2; }
+.hero__scroll { position: absolute; bottom: 2rem; left: 50%; transform: translateX(-50%); z-index: 2; }
+
+/* Cloud drift */
+.cloud { position: absolute; opacity: 0.5; animation: drift linear infinite; }
+@keyframes drift {
+  from { transform: translateX(-10vw); }
+  to { transform: translateX(110vw); }
+}
+
+/* Scene backgrounds — each scene gets a tint */
+.scene--box    { background: linear-gradient(180deg, #f6ead8, #faf6f0); }
+.scene--keys   { background: linear-gradient(180deg, #eaf0f2, #faf6f0); }
+.scene--sink   { background: linear-gradient(180deg, #e8eef0, #f3ebde); }
+.scene--shoe   { background: linear-gradient(180deg, #f0e8e6, #faf6f0); }
+.scene--vase   { background: linear-gradient(180deg, #ece6f0, #faf6f0); }
+.scene--bag    { background: linear-gradient(180deg, #f0eee6, #f3ebde); }
+.scene--shelf  { background: linear-gradient(180deg, #e8eee6, #faf6f0); }
+
+/* Ground / floor line */
+.floor {
+  position: absolute; bottom: 0; left: 0; right: 0; height: 30%;
+  z-index: 1;
+}
+
+/* Closing scene */
+.closing {
+  text-align: center; padding: 6rem 1.5rem;
+  background: linear-gradient(180deg, var(--cream), var(--cream-deep));
+}
+.closing__cat { width: 200px; margin: 0 auto 2rem; }
+
+/* Progress indicator (side dots) */
+.journey-dots {
+  position: fixed; right: 1.2rem; top: 50%; transform: translateY(-50%);
+  z-index: 50; display: flex; flex-direction: column; gap: 0.6rem;
+  opacity: 0; transition: opacity 0.3s;
+}
+.journey-dots.show { opacity: 1; }
+.journey-dots button {
+  width: 10px; height: 10px; border-radius: 50%; border: 0; padding: 0;
+  background: var(--ink-faint); opacity: 0.4; cursor: none; transition: all 0.2s;
+}
+.journey-dots button.active { background: var(--terracotta); opacity: 1; transform: scale(1.3); }
+@media (max-width: 700px) { .journey-dots { display: none; } }

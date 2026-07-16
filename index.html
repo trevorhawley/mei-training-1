@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nozzle — Cats Sleeping in Weird Spaces</title>
+  <meta name="description" content="A quiet little photography project celebrating cats who sleep in places they probably shouldn't.">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/journey.css">
+</head>
+<body data-page="home">
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="hero__bg">
+      <div class="cloud" style="top:12%; width:120px; animation-duration:60s">
+        <svg viewBox="0 0 120 50" xmlns="http://www.w3.org/2000/svg"><ellipse cx="40" cy="30" rx="40" ry="20" fill="#fff"/><ellipse cx="70" cy="25" rx="30" ry="16" fill="#fff"/></svg>
+      </div>
+      <div class="cloud" style="top:24%; width:80px; animation-duration:80s; animation-delay:-20s">
+        <svg viewBox="0 0 120 50" xmlns="http://www.w3.org/2000/svg"><ellipse cx="40" cy="30" rx="40" ry="20" fill="#fff"/><ellipse cx="70" cy="25" rx="30" ry="16" fill="#fff"/></svg>
+      </div>
+    </div>
+
+    <div class="hero__content">
+      <span class="eyebrow">A photography project</span>
+      <h1 class="hero__title">Cats sleeping in<br><span class="accent">weird spaces</span></h1>
+      <p class="lede center" style="margin:1rem auto 0">Scroll slowly. Hover the cats. They might wake up.</p>
+    </div>
+
+    <div class="hero__cat" data-cat="orange" data-bubble="...five more minutes">
+      <!-- cat injected by app.js -->
+    </div>
+
+    <div class="hero__scroll">
+      <div class="scroll-hint">
+        <span>scroll</span>
+        <div class="scroll-hint__arrow"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Journey -->
+  <main class="journey">
+    <div class="journey-dots"></div>
+
+    <!-- Scene 1: The Box -->
+    <section class="scene scene--box" id="scene-1">
+      <div class="layer" data-speed="0.15" data-scene="box"></div>
+      <div class="scene__cat" data-cat="orange" data-bubble="the box is mine now"></div>
+      <div class="scene__caption reveal">
+        <span class="eyebrow">No. 01 — The Box</span>
+        <h2>It was here for ten seconds.</h2>
+        <p>And yet somehow, before you could even break it down, a cat was already inside. They don't need the thing you ordered. They need the container it came in.</p>
+      </div>
+    </section>
+
+    <!-- Scene 2: The Keyboard -->
+    <section class="scene scene--keys" id="scene-2">
+      <div class="layer" data-speed="0.12" data-scene="keyboard"></div>
+      <div class="scene__cat" data-cat="grey" data-bubble="you weren't typing"></div>
+      <div class="scene__caption reveal">
+        <span class="eyebrow">No. 02 — The Keyboard</span>
+        <h2>Work can wait.</h2>
+        <p>The exact moment you sit down to be productive is the exact moment a warm rectangle becomes the most desirable bed in the house.</p>
+      </div>
+    </section>
+
+    <!-- Scene 3: The Sink -->
+    <section class="scene scene--sink" id="scene-3">
+      <div class="layer" data-speed="0.18" data-scene="sink"></div>
+      <div class="scene__cat" data-cat="cream" data-bubble="this is porcelain, actually"></div>
+      <div class="scene__caption reveal">
+        <span class="eyebrow">No. 03 — The Sink</span>
+        <h2>Cool, smooth, and curved just so.</h2>
+        <p>Cats gravitate toward sinks in summer. The porcelain stays cool, the basin cradles them, and the faucet drips on schedule. A five-star suite.</p>
+      </div>
+    </section>
+
+    <!-- Scene 4: The Shoe -->
+    <section class="scene scene--shoe" id="scene-4">
+      <div class="layer" data-speed="0.14" data-scene="shoe"></div>
+      <div class="scene__cat" data-cat="black" data-bubble="smells like you"></div>
+      <div class="scene__caption reveal">
+        <span class="eyebrow">No. 04 — The Shoe</span>
+        <h2>Your scent, concentrated.</h2>
+        <p>A shoe is a small cave that smells exactly like the person they love. From the cat's perspective, this is not weird. This is a hug.</p>
+      </div>
+    </section>
+
+    <!-- Scene 5: The Vase -->
+    <section class="scene scene--vase" id="scene-5">
+      <div class="layer" data-speed="0.16" data-scene="vase"></div>
+      <div class="scene__cat" data-cat="calico" data-bubble="don't move the vase"></div>
+      <div class="scene__caption reveal">
+        <span class="eyebrow">No. 05 — The Vase</span>
+        <h2>An act of quiet rebellion.</h2>
+        <p>They know it's not for them. That's the point. The vase is high, narrow, and slightly dangerous — which, to a cat, reads as "premium napping real estate."</p>
+      </div>
+    </section>
+
+    <!-- Scene 6: The Bag -->
+    <section class="scene scene--bag" id="scene-6">
+      <div class="layer" data-speed="0.13" data-scene="bag"></div>
+      <div class="scene__cat" data-cat="orange" data-cat-flip="1" data-bubble="i live here now"></div>
+      <div class="scene__caption reveal">
+        <span class="eyebrow">No. 06 — The Bag</span>
+        <h2>Open for one minute. Occupied.</h2>
+        <p>A bag on the floor is an invitation. A bag with handles is a hammock. The groceries can wait on the counter.</p>
+      </div>
+    </section>
+
+    <!-- Scene 7: The Bookshelf -->
+    <section class="scene scene--shelf" id="scene-7">
+      <div class="layer" data-speed="0.17" data-scene="shelf"></div>
+      <div class="scene__cat" data-cat="grey" data-bubble="this gap is mine"></div>
+      <div class="scene__caption reveal">
+        <span class="eyebrow">No. 07 — The Bookshelf</span>
+        <h2>They made a gap. On purpose.</h2>
+        <p>Books were removed to create a custom shelf-bed. You didn't ask for this renovation. You're not even mad about it.</p>
+      </div>
+    </section>
+
+    <!-- Closing -->
+    <section class="closing">
+      <div class="closing__cat" data-cat="orange" data-bubble="thanks for visiting"></div>
+      <h2>That's the whole journey.</h2>
+      <p class="lede center" style="margin:1rem auto 2rem">Seven weird spaces. Seven cats who didn't ask permission.</p>
+      <div style="display:flex; gap:1rem; justify-content:center; flex-wrap:wrap">
+        <a class="btn btn--primary" href="featured.html">Meet this week's cat</a>
+        <a class="btn btn--ghost" href="spots.html">Browse favorite spots</a>
+      </div>
+    </section>
+  </main>
+
+  <script type="module" src="js/app.js"></script>
+</body>
+</html>
