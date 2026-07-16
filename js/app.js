@@ -7,7 +7,7 @@ import { initPurr } from "./purr.js";
 import * as cats from "./cats.js";
 const { pawLogo, purrIcon } = cats;
 
-/* ---- Inject cats & scenes from data attributes ---- */
+/* ---- Inject cats & art from data attributes ---- */
 function injectArt() {
   document.querySelectorAll("[data-cat]").forEach((el) => {
     const variant = el.dataset.cat || "orange";
@@ -25,6 +25,28 @@ function injectArt() {
     const name = el.dataset.scene;
     const fn = cats["scene" + name.charAt(0).toUpperCase() + name.slice(1)];
     if (fn) el.innerHTML = fn();
+  });
+  document.querySelectorAll("[data-prop]").forEach((el) => {
+    const name = el.dataset.prop;
+    const fn = cats["prop" + name.charAt(0).toUpperCase() + name.slice(1)];
+    if (!fn) return;
+    if (name === "door") el.innerHTML = fn(el.dataset.door);
+    else if (name === "window") el.innerHTML = fn(el.dataset.sky);
+    else el.innerHTML = fn();
+  });
+  document.querySelectorAll("[data-spot]").forEach((el) => {
+    const name = el.dataset.spot.replace("hidden-", "");
+    const fn = cats["spot" + name.charAt(0).toUpperCase() + name.slice(1)];
+    if (fn) {
+      el.innerHTML =
+        fn() +
+        (el.dataset.bubble
+          ? `<span class="bubble">${el.dataset.bubble}</span>`
+          : "");
+    }
+  });
+  document.querySelectorAll(".cloud").forEach((el) => {
+    el.innerHTML = `<svg viewBox="0 0 120 50" xmlns="http://www.w3.org/2000/svg"><ellipse cx="40" cy="30" rx="40" ry="20" fill="#fff"/><ellipse cx="70" cy="25" rx="30" ry="16" fill="#fff"/></svg>`;
   });
 }
 
@@ -147,19 +169,27 @@ function initReveal() {
   els.forEach((el) => io.observe(el));
 }
 
-/* ---- Cat wake on hover ---- */
-function initCats() {
+/* ---- Cat wake on hover/tap/focus ---- */
+function initCats(onWake) {
   document
     .querySelectorAll(".scene__cat, .hero__cat, .cat-pet")
     .forEach((cat) => {
       const bubble = cat.querySelector(".bubble");
-      cat.addEventListener("mouseenter", () => {
+      const wake = () => {
         cat.classList.add("awake");
         bubble?.classList.add("show");
-      });
-      cat.addEventListener("mouseleave", () => {
+        onWake?.(cat);
+      };
+      const sleep = () => {
         cat.classList.remove("awake");
         bubble?.classList.remove("show");
+      };
+      cat.addEventListener("mouseenter", wake);
+      cat.addEventListener("mouseleave", sleep);
+      cat.addEventListener("click", () => {
+        wake();
+        clearTimeout(cat._napTimer);
+        cat._napTimer = setTimeout(sleep, 1800);
       });
       // spawn Zzz while sleeping
       const spawnZzz = () => {
@@ -177,58 +207,34 @@ function initCats() {
     });
 }
 
-/* ---- Journey dots + parallax (home only) ---- */
-function initJourney() {
-  const journey = document.querySelector(".journey");
-  if (!journey) return;
-
-  const scenes = Array.from(journey.querySelectorAll(".scene"));
-  const dots = document.querySelector(".journey-dots");
-
-  // Build dots
-  scenes.forEach((s, i) => {
-    const b = document.createElement("button");
-    b.setAttribute("aria-label", `Scene ${i + 1}`);
-    b.addEventListener("click", () => s.scrollIntoView({ behavior: "smooth" }));
-    dots?.appendChild(b);
-  });
-
-  // Parallax layers
-  function onScroll() {
-    const scrollY = window.scrollY;
-    const vh = window.innerHeight;
-    const showDots = scrollY > vh * 0.5;
-    dots?.classList.toggle("show", showDots);
-
-    scenes.forEach((scene, i) => {
-      const rect = scene.getBoundingClientRect();
-      const center = rect.top + rect.height / 2;
-      const dist = (center - vh / 2) / vh;
-      const layers = scene.querySelectorAll("[data-speed]");
-      layers.forEach((l) => {
-        const speed = parseFloat(l.dataset.speed);
-        l.style.transform = `translateY(${dist * speed * 100}px)`;
-      });
-      // active dot
-      if (rect.top < vh * 0.5 && rect.bottom > vh * 0.5) {
-        dots
-          ?.querySelectorAll("button")
-          .forEach((b, j) => b.classList.toggle("active", j === i));
-      }
-    });
-  }
-  window.addEventListener("scroll", onScroll, { passive: true });
-  onScroll();
-}
-
 /* ---- Boot ---- */
-document.addEventListener("DOMContentLoaded", () => {
+document.addEventListener("DOMContentLoaded", async () => {
+  if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+    document.body.classList.add("reduced-motion");
+  }
   injectArt();
   injectChrome();
   initNav();
   initReveal();
-  initCats();
-  initJourney();
   initCursor();
-  initPurr();
+  const purr = initPurr();
+
+  if (document.querySelector(".journey")) {
+    try {
+      const [{ initJourney }, { initDiscovery }] = await Promise.all([
+        import("./journey.js"),
+        import("./discovery.js"),
+      ]);
+      const game = initDiscovery({ chime: purr.chime });
+      initCats((cat) => {
+        if (cat.dataset.spotId) game.markFound(cat.dataset.spotId);
+      });
+      initJourney();
+    } catch (e) {
+      console.warn("journey modules pending", e);
+      initCats();
+    }
+  } else {
+    initCats();
+  }
 });

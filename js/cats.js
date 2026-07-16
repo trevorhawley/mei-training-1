@@ -370,3 +370,235 @@ export function purrIcon() {
     <path d="M5 15 Q8 10 12 15 Q16 20 20 15 Q24 10 28 15" />
   </svg>`;
 }
+
+/* ============================================================
+   World props (home journey v2)
+   Transparent-background prop clusters. The old scene*()
+   full-bleed backdrops remain for featured/spots pages.
+   ============================================================ */
+
+export function propBox() {
+  return `
+  <svg viewBox="0 0 420 300" xmlns="http://www.w3.org/2000/svg">
+    <ellipse cx="200" cy="272" rx="180" ry="16" fill="#3d3528" opacity="0.07"/>
+    <g transform="translate(80 60)">
+      <path d="M0 0 L200 0 L240 60 L-40 60 Z" fill="#d4a878" stroke="#8a6a48" stroke-width="3"/>
+      <path d="M0 0 L-40 60 L-40 200 L0 140 Z" fill="#b88a5a" stroke="#8a6a48" stroke-width="3"/>
+      <path d="M200 0 L240 60 L240 200 L200 140 Z" fill="#c89a6a" stroke="#8a6a48" stroke-width="3"/>
+      <path d="M0 0 L0 140 L200 140 L200 0 Z" fill="#e8c8a0" stroke="#8a6a48" stroke-width="3"/>
+      <path d="M0 0 L100 -20 L200 0" fill="none" stroke="#8a6a48" stroke-width="3"/>
+      <text x="100" y="80" font-family="serif" font-size="22" fill="#8a6a48" text-anchor="middle" opacity="0.5">FRAGILE</text>
+    </g>
+    <g transform="translate(360 170)">
+      <rect x="-20" y="0" width="40" height="60" rx="4" fill="#b87a4f" stroke="#8a6a48" stroke-width="2"/>
+      <path d="M0 0 Q-30 -40 -20 -80 Q0 -60 0 -90" stroke="#5c7e60" stroke-width="3" fill="#7a9e7e"/>
+      <path d="M0 0 Q30 -40 20 -80 Q0 -60 0 -90" stroke="#5c7e60" stroke-width="3" fill="#7a9e7e"/>
+    </g>
+  </svg>`;
+}
+
+export function propKeyboard() {
+  return `
+  <svg viewBox="0 0 560 380" xmlns="http://www.w3.org/2000/svg">
+    <rect x="10" y="300" width="540" height="22" rx="10" fill="#d4c4a8" stroke="#a89c8a" stroke-width="2.5"/>
+    <rect x="40" y="322" width="18" height="50" rx="6" fill="#b8a888" stroke="#a89c8a" stroke-width="2"/>
+    <rect x="502" y="322" width="18" height="50" rx="6" fill="#b8a888" stroke="#a89c8a" stroke-width="2"/>
+    <rect x="150" y="60" width="280" height="170" rx="10" fill="#3d3528" stroke="#2a2228" stroke-width="3"/>
+    <rect x="165" y="75" width="250" height="140" rx="4" fill="#9bc4d0" opacity="0.5"/>
+    <rect x="255" y="230" width="70" height="16" fill="#3d3528"/>
+    <rect x="225" y="246" width="130" height="8" rx="4" fill="#3d3528"/>
+    <g transform="translate(70 258)">
+      <rect width="300" height="42" rx="8" fill="#f0e4cc" stroke="#a89c8a" stroke-width="2"/>
+      ${Array.from({ length: 9 }, (_, i) => `<rect x="${8 + i * 32}" y="7" width="26" height="12" rx="3" fill="#fffdf8" stroke="#a89c8a" stroke-width="1.2"/>`).join('')}
+      <rect x="40" y="24" width="210" height="11" rx="3" fill="#fffdf8" stroke="#a89c8a" stroke-width="1.2"/>
+    </g>
+    <g transform="translate(452 240)">
+      <rect x="0" y="0" width="42" height="52" rx="4" fill="#fffdf8" stroke="#a89c8a" stroke-width="2"/>
+      <path d="M42 8 Q58 8 58 26 Q58 42 42 42" fill="none" stroke="#a89c8a" stroke-width="2"/>
+      <ellipse cx="21" cy="4" rx="18" ry="5" fill="#6b6051"/>
+    </g>
+  </svg>`;
+}
+
+export function propSink() {
+  return `
+  <svg viewBox="0 0 560 330" xmlns="http://www.w3.org/2000/svg">
+    <g opacity="0.35">
+      ${Array.from({ length: 6 }, (_, i) => `<rect x="${40 + i * 82}" y="10" width="78" height="78" fill="#cfe4ea" stroke="#a89c8a" stroke-width="1"/>`).join('')}
+    </g>
+    <rect x="0" y="230" width="560" height="26" rx="8" fill="#f0e4cc" stroke="#a89c8a" stroke-width="2.5"/>
+    <ellipse cx="280" cy="232" rx="180" ry="34" fill="#c8d8de" stroke="#8a9aa0" stroke-width="3"/>
+    <ellipse cx="280" cy="224" rx="160" ry="25" fill="#b8c8ce"/>
+    <path d="M272 140 L272 96 Q272 78 290 78 L316 78" stroke="#a89c8a" stroke-width="6" fill="none" stroke-linecap="round"/>
+    <circle cx="316" cy="78" r="9" fill="#a89c8a"/>
+    <path d="M316 90 q-3 10 0 14 q3 -4 0 -14" fill="#9bc4d0"/>
+    <g transform="translate(478 150)">
+      <rect x="0" y="16" width="34" height="60" rx="6" fill="#7a9e7e" stroke="#5c7e60" stroke-width="2"/>
+      <rect x="10" y="0" width="14" height="18" rx="3" fill="#5c7e60"/>
+    </g>
+  </svg>`;
+}
+
+export function propShoe() {
+  return `
+  <svg viewBox="0 0 640 300" xmlns="http://www.w3.org/2000/svg">
+    <g transform="translate(20 40)">
+      <rect x="0" y="0" width="600" height="20" fill="#b87a4f" stroke="#8a6a48" stroke-width="2"/>
+      <rect x="0" y="90" width="600" height="20" fill="#b87a4f" stroke="#8a6a48" stroke-width="2"/>
+      <rect x="0" y="180" width="600" height="20" fill="#b87a4f" stroke="#8a6a48" stroke-width="2"/>
+      <rect x="0" y="0" width="20" height="200" fill="#a86a3f" stroke="#8a6a48" stroke-width="2"/>
+      <rect x="580" y="0" width="20" height="200" fill="#a86a3f" stroke="#8a6a48" stroke-width="2"/>
+      <g transform="translate(50 32)"><path d="M0 50 Q0 30 30 25 L80 25 Q100 25 110 50 L110 55 L0 55 Z" fill="#d4956a" stroke="#8a6a48" stroke-width="2"/></g>
+      <g transform="translate(200 32)"><path d="M0 50 Q0 30 30 25 L80 25 Q100 25 110 50 L110 55 L0 55 Z" fill="#7a9e7e" stroke="#5c7e60" stroke-width="2"/></g>
+      <g transform="translate(350 122)"><path d="M0 50 Q0 30 30 25 L80 25 Q100 25 110 50 L110 55 L0 55 Z" fill="#c4a8d4" stroke="#909098" stroke-width="2"/></g>
+      <g transform="translate(480 32)"><path d="M0 50 Q0 30 30 25 L80 25 Q100 25 110 50 L110 55 L0 55 Z" fill="#9bc4d0" stroke="#7a9aa4" stroke-width="2"/></g>
+    </g>
+  </svg>`;
+}
+
+export function propVase() {
+  return `
+  <svg viewBox="0 0 380 400" xmlns="http://www.w3.org/2000/svg">
+    <rect x="10" y="330" width="360" height="16" rx="6" fill="#d4c4a8" stroke="#a89c8a" stroke-width="2.5"/>
+    <g transform="translate(120 150)">
+      <path d="M0 180 Q-20 160 -10 100 Q-30 60 0 0 L120 0 Q150 60 130 100 Q140 160 120 180 Z" fill="#c4a8d4" stroke="#909098" stroke-width="3"/>
+      <ellipse cx="60" cy="0" rx="60" ry="12" fill="#a888c4" stroke="#909098" stroke-width="2"/>
+      <path d="M20 60 Q60 50 100 60" stroke="#909098" stroke-width="2" fill="none" opacity="0.4"/>
+    </g>
+    <g transform="translate(180 150)" stroke="#5c7e60" stroke-width="2" fill="none">
+      <path d="M0 0 Q-10 -60 -30 -100"/>
+      <path d="M0 0 Q10 -60 30 -100"/>
+      <path d="M0 0 Q0 -70 0 -120"/>
+      <circle cx="-30" cy="-100" r="8" fill="#e8c97a" stroke="#b8a058"/>
+      <circle cx="30" cy="-100" r="8" fill="#e8b4b8" stroke="#b8888c"/>
+      <circle cx="0" cy="-120" r="8" fill="#d4956a" stroke="#a8754a"/>
+    </g>
+  </svg>`;
+}
+
+export function propShelf() {
+  const colors = ['#d4956a', '#7a9e7e', '#c4a8d4', '#9bc4d0', '#e8c97a', '#e8b4b8'];
+  const row = (x0, y, n, seed) => Array.from({ length: n }, (_, i) => {
+    const h = 78 + ((i + seed) % 4) * 14;
+    return `<rect x="${x0 + i * 52}" y="${y - h}" width="46" height="${h}" fill="${colors[(i + seed) % colors.length]}" stroke="#8a6a48" stroke-width="2"/>`;
+  }).join('');
+  return `
+  <svg viewBox="0 0 820 460" xmlns="http://www.w3.org/2000/svg">
+    <g stroke="#8a6a48" stroke-width="3" fill="#d4a878">
+      <rect x="30" y="60" width="760" height="16"/>
+      <rect x="30" y="200" width="760" height="16"/>
+      <rect x="30" y="340" width="760" height="16"/>
+      <rect x="30" y="60" width="16" height="296"/>
+      <rect x="774" y="60" width="16" height="296"/>
+    </g>
+    ${row(60, 200, 13, 0)}
+    ${row(60, 340, 5, 2)}
+    ${row(560, 340, 4, 4)}
+  </svg>`;
+}
+
+export function propBag() {
+  return `
+  <svg viewBox="0 0 420 430" xmlns="http://www.w3.org/2000/svg">
+    <ellipse cx="210" cy="408" rx="170" ry="14" fill="#3d3528" opacity="0.07"/>
+    <rect x="40" y="10" width="6" height="70" fill="#8a6a48"/>
+    <rect x="22" y="80" width="42" height="8" rx="4" fill="#8a6a48"/>
+    <g transform="translate(50 92)">
+      <circle cx="0" cy="14" r="11" fill="none" stroke="#a89c8a" stroke-width="3"/>
+      <rect x="-2.5" y="22" width="5" height="24" fill="#a89c8a"/>
+      <rect x="-12" y="42" width="11" height="16" rx="3" fill="#a89c8a"/>
+      <rect x="4" y="42" width="11" height="16" rx="3" fill="#a89c8a"/>
+    </g>
+    <g transform="translate(120 140)">
+      <path d="M0 0 L0 260 L240 260 L240 0 Z" fill="#e8dcc4" stroke="#a89c8a" stroke-width="3"/>
+      <path d="M40 0 Q40 -60 80 -60 Q120 -60 120 0" fill="none" stroke="#a89c8a" stroke-width="4"/>
+      <path d="M120 0 Q120 -60 160 -60 Q200 -60 200 0" fill="none" stroke="#a89c8a" stroke-width="4"/>
+      <text x="120" y="150" font-family="serif" font-size="28" fill="#a89c8a" text-anchor="middle" opacity="0.5">market</text>
+    </g>
+  </svg>`;
+}
+
+export function propHills() {
+  return `
+  <svg viewBox="0 0 1200 320" preserveAspectRatio="xMidYMax slice" xmlns="http://www.w3.org/2000/svg">
+    <circle cx="880" cy="150" r="52" fill="#f2b98a" opacity="0.85"/>
+    <ellipse cx="220" cy="330" rx="420" ry="150" fill="#e8cfa8" opacity="0.8"/>
+    <ellipse cx="900" cy="360" rx="520" ry="180" fill="#dfc09a" opacity="0.8"/>
+    <g stroke="#8a6a48" stroke-width="2" opacity="0.9">
+      <path d="M140 250 l30 -26 l30 26 Z" fill="#c98a52"/><rect x="150" y="250" width="40" height="34" fill="#f0e4cc"/>
+      <path d="M310 262 l26 -22 l26 22 Z" fill="#b87a4f"/><rect x="318" y="262" width="36" height="28" fill="#f0e4cc"/>
+      <path d="M980 268 l28 -24 l28 24 Z" fill="#c98a52"/><rect x="988" y="268" width="40" height="30" fill="#f0e4cc"/>
+    </g>
+  </svg>`;
+}
+
+export function propDoor(kind = 'front') {
+  const mat = kind === 'front'
+    ? `<ellipse cx="110" cy="244" rx="66" ry="14" fill="#b87a4f" stroke="#8a6a48" stroke-width="2"/>
+       <text x="110" y="249" font-family="inherit" font-size="14" fill="#f5e8d8" text-anchor="middle">mrrp</text>`
+    : '';
+  return `
+  <svg viewBox="0 0 220 264" xmlns="http://www.w3.org/2000/svg">
+    <rect x="30" y="10" width="160" height="220" rx="8" fill="#f0e4cc" stroke="#a89c8a" stroke-width="3"/>
+    <path d="M52 230 L52 88 Q52 30 110 30 Q168 30 168 88 L168 230 Z" fill="#b87a4f" stroke="#8a6a48" stroke-width="3"/>
+    <path d="M68 110 L68 92 Q68 48 110 48 Q152 48 152 92 L152 110 Z" fill="#c89a6a" stroke="#8a6a48" stroke-width="2"/>
+    <rect x="68" y="126" width="84" height="80" rx="6" fill="#c89a6a" stroke="#8a6a48" stroke-width="2"/>
+    <circle cx="146" cy="146" r="6" fill="#e8c97a" stroke="#8a6a48" stroke-width="2"/>
+    ${mat}
+  </svg>`;
+}
+
+export function propWindow(sky = '#cfe4ea') {
+  return `
+  <svg viewBox="0 0 260 300" xmlns="http://www.w3.org/2000/svg">
+    <rect x="10" y="10" width="240" height="260" rx="10" fill="${sky}" stroke="#a89c8a" stroke-width="5"/>
+    <line x1="130" y1="10" x2="130" y2="270" stroke="#a89c8a" stroke-width="4"/>
+    <line x1="10" y1="140" x2="250" y2="140" stroke="#a89c8a" stroke-width="4"/>
+    <ellipse cx="70" cy="70" rx="34" ry="14" fill="#fff" opacity="0.7"/>
+    <rect x="0" y="270" width="260" height="14" rx="6" fill="#d4c4a8" stroke="#a89c8a" stroke-width="2"/>
+  </svg>`;
+}
+
+export function propLogotype() {
+  /* Letters hand-placed so the "o" position is exact; the curled cat
+     nests in the first o. Uses the display font via CSS class. */
+  return `
+  <svg viewBox="0 0 640 190" xmlns="http://www.w3.org/2000/svg" class="logotype__svg" role="img" aria-label="Nozzle">
+    <g class="logotype__letters" fill="#f5e8d8">
+      <text x="60"  y="140" text-anchor="middle">N</text>
+      <text x="255" y="140" text-anchor="middle">z</text>
+      <text x="340" y="140" text-anchor="middle">z</text>
+      <text x="420" y="140" text-anchor="middle">l</text>
+      <text x="500" y="140" text-anchor="middle">e</text>
+    </g>
+    <g transform="translate(160 100)">
+      <circle cx="0" cy="0" r="52" fill="none" stroke="#f5e8d8" stroke-width="14"/>
+      <g class="logotype__cat" transform="translate(-36 -28) scale(0.24)">
+        <path d="M70 150 Q40 145 35 120 Q33 100 50 95 Q60 95 62 105 Q55 110 55 120 Q60 135 80 138 Z" fill="#e8b07a" stroke="#c98a52" stroke-width="6"/>
+        <ellipse cx="160" cy="155" rx="95" ry="55" fill="#e8b07a" stroke="#c98a52" stroke-width="6"/>
+        <circle cx="225" cy="135" r="48" fill="#e8b07a" stroke="#c98a52" stroke-width="6"/>
+        <path d="M195 105 L188 78 L210 95 Z" fill="#e8b07a" stroke="#c98a52" stroke-width="6"/>
+        <path d="M255 105 L262 78 L240 95 Z" fill="#e8b07a" stroke="#c98a52" stroke-width="6"/>
+        <path d="M205 130 Q213 126 221 130" stroke="#3d3528" stroke-width="6" fill="none" stroke-linecap="round"/>
+        <path d="M229 130 Q237 126 245 130" stroke="#3d3528" stroke-width="6" fill="none" stroke-linecap="round"/>
+        <path d="M225 142 L221 146 L229 146 Z" fill="#e8b4b8" stroke="#c98a52" stroke-width="3"/>
+      </g>
+    </g>
+  </svg>`;
+}
+
+export function propCloudcat() {
+  return `
+  <svg viewBox="0 0 260 160" xmlns="http://www.w3.org/2000/svg">
+    <ellipse cx="110" cy="110" rx="90" ry="38" fill="#fffdf8" opacity="0.9"/>
+    <ellipse cx="185" cy="98" rx="60" ry="30" fill="#fffdf8" opacity="0.9"/>
+    <g transform="translate(60 30) scale(0.45)">
+      <ellipse cx="160" cy="155" rx="95" ry="55" fill="#e8c97a" stroke="#c9a352" stroke-width="4"/>
+      <circle cx="225" cy="135" r="48" fill="#e8c97a" stroke="#c9a352" stroke-width="4"/>
+      <path d="M195 105 L188 78 L210 95 Z" fill="#e8c97a" stroke="#c9a352" stroke-width="4"/>
+      <path d="M255 105 L262 78 L240 95 Z" fill="#e8c97a" stroke="#c9a352" stroke-width="4"/>
+      <path d="M205 130 Q213 126 221 130" stroke="#7a6428" stroke-width="4" fill="none" stroke-linecap="round"/>
+      <path d="M229 130 Q237 126 245 130" stroke="#7a6428" stroke-width="4" fill="none" stroke-linecap="round"/>
+    </g>
+  </svg>`;
+}

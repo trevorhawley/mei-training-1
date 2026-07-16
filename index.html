@@ -10,125 +10,194 @@
 </head>
 <body data-page="home">
 
-  <!-- Hero -->
-  <section class="hero">
-    <div class="hero__bg">
-      <div class="cloud" style="top:12%; width:120px; animation-duration:60s">
-        <svg viewBox="0 0 120 50" xmlns="http://www.w3.org/2000/svg"><ellipse cx="40" cy="30" rx="40" ry="20" fill="#fff"/><ellipse cx="70" cy="25" rx="30" ry="16" fill="#fff"/></svg>
+  <main class="journey" id="journey">
+    <svg class="trail" aria-hidden="true"></svg>
+    <div class="walker" aria-hidden="true"></div>
+
+    <!-- 1 · Dawn -->
+    <section class="region region--dawn" data-region="dawn">
+      <div class="cloud" data-depth="far" style="top:14%; left:-4%; width:120px"></div>
+      <div class="cloud" data-depth="far" style="top:26%; left:62%; width:80px"></div>
+      <div class="region__art region__art--hills" data-prop="hills" data-depth="far"></div>
+      <div class="hero__content">
+        <span class="eyebrow">A photography project</span>
+        <h1 class="hero__title">Cats sleeping in<br><span class="accent">weird spaces</span></h1>
+        <p class="lede center">Every good spot in the village is taken. Walk with Nozzle — hover the cats, peek in the bushes, and spot all&nbsp;12.</p>
+        <div class="scroll-hint">
+          <span>scroll to walk</span>
+          <div class="scroll-hint__arrow"></div>
+        </div>
       </div>
-      <div class="cloud" style="top:24%; width:80px; animation-duration:80s; animation-delay:-20s">
-        <svg viewBox="0 0 120 50" xmlns="http://www.w3.org/2000/svg"><ellipse cx="40" cy="30" rx="40" ry="20" fill="#fff"/><ellipse cx="70" cy="25" rx="30" ry="16" fill="#fff"/></svg>
+      <span class="trail-anchor" data-trail-anchor aria-hidden="true"></span>
+    </section>
+
+    <!-- 2 · Porch (morning) -->
+    <section class="region region--porch" data-region="porch">
+      <button class="hidden-spot hidden-spot--mailbox" data-spot="hidden-mailbox" data-bubble="special delivery" aria-label="A mailbox with something poking out"></button>
+      <div class="scene scene--box">
+        <div class="scene__stage">
+          <div class="scene__prop" data-prop="box"></div>
+          <div class="scene__cat" data-cat="orange" data-spot-id="scene-box" data-bubble="the box is mine now"></div>
+        </div>
+        <span class="trail-anchor" data-trail-anchor aria-hidden="true"></span>
+        <div class="signpost reveal">
+          <span class="signpost__plank">No. 01 — The Box</span>
+          <div class="signpost__board">
+            <h2>It was here for ten seconds.</h2>
+            <p>And yet somehow, before you could even break it down, a cat was already inside. They don't need the thing you ordered. They need the container it came in.</p>
+          </div>
+        </div>
       </div>
-    </div>
-
-    <div class="hero__content">
-      <span class="eyebrow">A photography project</span>
-      <h1 class="hero__title">Cats sleeping in<br><span class="accent">weird spaces</span></h1>
-      <p class="lede center" style="margin:1rem auto 0">Scroll slowly. Hover the cats. They might wake up.</p>
-    </div>
-
-    <div class="hero__cat" data-cat="orange" data-bubble="...five more minutes">
-      <!-- cat injected by app.js -->
-    </div>
-
-    <div class="hero__scroll">
-      <div class="scroll-hint">
-        <span>scroll</span>
-        <div class="scroll-hint__arrow"></div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Journey -->
-  <main class="journey">
-    <div class="journey-dots"></div>
-
-    <!-- Scene 1: The Box -->
-    <section class="scene scene--box" id="scene-1">
-      <div class="layer" data-speed="0.15" data-scene="box"></div>
-      <div class="scene__cat" data-cat="orange" data-bubble="the box is mine now"></div>
-      <div class="scene__caption reveal">
-        <span class="eyebrow">No. 01 — The Box</span>
-        <h2>It was here for ten seconds.</h2>
-        <p>And yet somehow, before you could even break it down, a cat was already inside. They don't need the thing you ordered. They need the container it came in.</p>
+      <button class="hidden-spot hidden-spot--bush" data-spot="hidden-bush" data-bubble="mrrp?!" aria-label="A suspicious bush"></button>
+      <div class="doorway doorway--front">
+        <div class="doorway__art" data-prop="door" data-door="front"></div>
+        <span class="trail-anchor" data-trail-anchor data-trail-door aria-hidden="true"></span>
       </div>
     </section>
 
-    <!-- Scene 2: The Keyboard -->
-    <section class="scene scene--keys" id="scene-2">
-      <div class="layer" data-speed="0.12" data-scene="keyboard"></div>
-      <div class="scene__cat" data-cat="grey" data-bubble="you weren't typing"></div>
-      <div class="scene__caption reveal">
-        <span class="eyebrow">No. 02 — The Keyboard</span>
-        <h2>Work can wait.</h2>
-        <p>The exact moment you sit down to be productive is the exact moment a warm rectangle becomes the most desirable bed in the house.</p>
+    <!-- 3 · Study (late morning) -->
+    <section class="region region--study region--indoor" data-region="study">
+      <div class="region__window" data-prop="window" data-sky="#cfe4ea"></div>
+      <div class="scene scene--keys scene--flip">
+        <div class="scene__stage">
+          <div class="scene__prop" data-prop="keyboard"></div>
+          <div class="scene__cat" data-cat="grey" data-spot-id="scene-keys" data-bubble="you weren't typing"></div>
+        </div>
+        <span class="trail-anchor" data-trail-anchor aria-hidden="true"></span>
+        <div class="signpost reveal">
+          <span class="signpost__plank">No. 02 — The Keyboard</span>
+          <div class="signpost__board">
+            <h2>Work can wait.</h2>
+            <p>The exact moment you sit down to be productive is the exact moment a warm rectangle becomes the most desirable bed in the house.</p>
+          </div>
+        </div>
       </div>
     </section>
 
-    <!-- Scene 3: The Sink -->
-    <section class="scene scene--sink" id="scene-3">
-      <div class="layer" data-speed="0.18" data-scene="sink"></div>
-      <div class="scene__cat" data-cat="cream" data-bubble="this is porcelain, actually"></div>
-      <div class="scene__caption reveal">
-        <span class="eyebrow">No. 03 — The Sink</span>
-        <h2>Cool, smooth, and curved just so.</h2>
-        <p>Cats gravitate toward sinks in summer. The porcelain stays cool, the basin cradles them, and the faucet drips on schedule. A five-star suite.</p>
+    <!-- 4 · Kitchen (noon) -->
+    <section class="region region--kitchen region--indoor" data-region="kitchen">
+      <button class="hidden-spot hidden-spot--curtain" data-spot="hidden-curtain" data-bubble="the sun was here" aria-label="A kitchen curtain that just moved"></button>
+      <div class="scene scene--sink">
+        <div class="scene__stage">
+          <div class="scene__prop" data-prop="sink"></div>
+          <div class="scene__cat" data-cat="cream" data-spot-id="scene-sink" data-bubble="this is porcelain, actually"></div>
+        </div>
+        <span class="trail-anchor" data-trail-anchor aria-hidden="true"></span>
+        <div class="signpost reveal">
+          <span class="signpost__plank">No. 03 — The Sink</span>
+          <div class="signpost__board">
+            <h2>Cool, smooth, and curved just so.</h2>
+            <p>Cats gravitate toward sinks in summer. The porcelain stays cool, the basin cradles them, and the faucet drips on schedule. A five-star suite.</p>
+          </div>
+        </div>
       </div>
     </section>
 
-    <!-- Scene 4: The Shoe -->
-    <section class="scene scene--shoe" id="scene-4">
-      <div class="layer" data-speed="0.14" data-scene="shoe"></div>
-      <div class="scene__cat" data-cat="black" data-bubble="smells like you"></div>
-      <div class="scene__caption reveal">
-        <span class="eyebrow">No. 04 — The Shoe</span>
-        <h2>Your scent, concentrated.</h2>
-        <p>A shoe is a small cave that smells exactly like the person they love. From the cat's perspective, this is not weird. This is a hug.</p>
+    <!-- 5 · Hall (early afternoon) -->
+    <section class="region region--hall region--indoor" data-region="hall">
+      <div class="scene scene--shoe scene--flip">
+        <div class="scene__stage">
+          <div class="scene__prop" data-prop="shoe"></div>
+          <div class="scene__cat" data-cat="black" data-spot-id="scene-shoe" data-bubble="smells like you"></div>
+        </div>
+        <span class="trail-anchor" data-trail-anchor aria-hidden="true"></span>
+        <div class="signpost reveal">
+          <span class="signpost__plank">No. 04 — The Shoe</span>
+          <div class="signpost__board">
+            <h2>Your scent, concentrated.</h2>
+            <p>A shoe is a small cave that smells exactly like the person they love. From the cat's perspective, this is not weird. This is a hug.</p>
+          </div>
+        </div>
+      </div>
+      <button class="hidden-spot hidden-spot--basket" data-spot="hidden-basket" data-bubble="do NOT fold me" aria-label="A laundry basket with its lid ajar"></button>
+    </section>
+
+    <!-- 6 · Living room (afternoon) -->
+    <section class="region region--living region--indoor" data-region="living">
+      <div class="region__window" data-prop="window" data-sky="#f0c894"></div>
+      <div class="scene scene--vase">
+        <div class="scene__stage">
+          <div class="scene__prop" data-prop="vase"></div>
+          <div class="scene__cat" data-cat="calico" data-spot-id="scene-vase" data-bubble="don't move the vase"></div>
+        </div>
+        <span class="trail-anchor" data-trail-anchor aria-hidden="true"></span>
+        <div class="signpost reveal">
+          <span class="signpost__plank">No. 05 — The Vase</span>
+          <div class="signpost__board">
+            <h2>An act of quiet rebellion.</h2>
+            <p>They know it's not for them. That's the point. The vase is high, narrow, and slightly dangerous — which, to a cat, reads as "premium napping real estate."</p>
+          </div>
+        </div>
+      </div>
+      <div class="scene scene--shelf scene--flip">
+        <div class="scene__stage">
+          <div class="scene__prop" data-prop="shelf"></div>
+          <div class="scene__cat" data-cat="grey" data-spot-id="scene-shelf" data-bubble="this gap is mine"></div>
+        </div>
+        <span class="trail-anchor" data-trail-anchor aria-hidden="true"></span>
+        <div class="signpost reveal">
+          <span class="signpost__plank">No. 06 — The Bookshelf</span>
+          <div class="signpost__board">
+            <h2>They made a gap. On purpose.</h2>
+            <p>Books were removed to create a custom shelf-bed. You didn't ask for this renovation. You're not even mad about it.</p>
+          </div>
+        </div>
+      </div>
+      <div class="doorway doorway--back">
+        <div class="doorway__art" data-prop="door" data-door="back"></div>
+        <span class="trail-anchor" data-trail-anchor data-trail-door aria-hidden="true"></span>
       </div>
     </section>
 
-    <!-- Scene 5: The Vase -->
-    <section class="scene scene--vase" id="scene-5">
-      <div class="layer" data-speed="0.16" data-scene="vase"></div>
-      <div class="scene__cat" data-cat="calico" data-bubble="don't move the vase"></div>
-      <div class="scene__caption reveal">
-        <span class="eyebrow">No. 05 — The Vase</span>
-        <h2>An act of quiet rebellion.</h2>
-        <p>They know it's not for them. That's the point. The vase is high, narrow, and slightly dangerous — which, to a cat, reads as "premium napping real estate."</p>
+    <!-- 7 · Garden (golden hour) -->
+    <section class="region region--garden" data-region="garden">
+      <button class="hidden-spot hidden-spot--tree" data-spot="hidden-tree" data-bubble="birds owe me rent" aria-label="A tree with a tail hanging from it"></button>
+      <div class="scene scene--bag">
+        <div class="scene__stage">
+          <div class="scene__prop" data-prop="bag"></div>
+          <div class="scene__cat" data-cat="orange" data-cat-flip="1" data-spot-id="scene-bag" data-bubble="i live here now"></div>
+        </div>
+        <span class="trail-anchor" data-trail-anchor aria-hidden="true"></span>
+        <div class="signpost reveal">
+          <span class="signpost__plank">No. 07 — The Bag</span>
+          <div class="signpost__board">
+            <h2>Open for one minute. Occupied.</h2>
+            <p>A bag on the floor is an invitation. A bag with handles is a hammock. The groceries can wait on the counter.</p>
+          </div>
+        </div>
       </div>
     </section>
 
-    <!-- Scene 6: The Bag -->
-    <section class="scene scene--bag" id="scene-6">
-      <div class="layer" data-speed="0.13" data-scene="bag"></div>
-      <div class="scene__cat" data-cat="orange" data-cat-flip="1" data-bubble="i live here now"></div>
-      <div class="scene__caption reveal">
-        <span class="eyebrow">No. 06 — The Bag</span>
-        <h2>Open for one minute. Occupied.</h2>
-        <p>A bag on the floor is an invitation. A bag with handles is a hammock. The groceries can wait on the counter.</p>
+    <!-- 8 · Night -->
+    <section class="region region--night" data-region="night">
+      <div class="night-sky" aria-hidden="true">
+        <span class="star" style="top:12%; left:18%"></span>
+        <span class="star" style="top:8%;  left:52%"></span>
+        <span class="star" style="top:20%; left:74%"></span>
+        <span class="star" style="top:30%; left:32%"></span>
+        <span class="star" style="top:16%; left:88%"></span>
+        <span class="star" style="top:34%; left:60%"></span>
+        <svg class="moon" viewBox="0 0 60 60"><path d="M38 6 A24 24 0 1 0 54 40 A19 19 0 1 1 38 6 Z" fill="#f4e6b8"/></svg>
+        <span class="firefly" style="top:55%; left:20%"></span>
+        <span class="firefly" style="top:66%; left:70%"></span>
+        <span class="firefly" style="top:74%; left:40%"></span>
+        <span class="firefly" style="top:60%; left:85%"></span>
       </div>
-    </section>
-
-    <!-- Scene 7: The Bookshelf -->
-    <section class="scene scene--shelf" id="scene-7">
-      <div class="layer" data-speed="0.17" data-scene="shelf"></div>
-      <div class="scene__cat" data-cat="grey" data-bubble="this gap is mine"></div>
-      <div class="scene__caption reveal">
-        <span class="eyebrow">No. 07 — The Bookshelf</span>
-        <h2>They made a gap. On purpose.</h2>
-        <p>Books were removed to create a custom shelf-bed. You didn't ask for this renovation. You're not even mad about it.</p>
+      <div class="cloud-cat" data-prop="cloudcat" aria-hidden="true"></div>
+      <div class="closing">
+        <h2>Every spot was taken.</h2>
+        <p class="lede center">So Nozzle picked the weirdest one of all.</p>
+        <div class="logotype" data-prop="logotype"></div>
+        <div class="cta-row">
+          <div class="signpost signpost--cta">
+            <div class="signpost__board"><a class="btn btn--primary" href="featured.html">Meet this week's cat</a></div>
+          </div>
+          <div class="signpost signpost--cta" style="--tilt:1.4deg">
+            <div class="signpost__board"><a class="btn btn--ghost" href="spots.html">Browse favorite spots</a></div>
+          </div>
+        </div>
       </div>
-    </section>
-
-    <!-- Closing -->
-    <section class="closing">
-      <div class="closing__cat" data-cat="orange" data-bubble="thanks for visiting"></div>
-      <h2>That's the whole journey.</h2>
-      <p class="lede center" style="margin:1rem auto 2rem">Seven weird spaces. Seven cats who didn't ask permission.</p>
-      <div style="display:flex; gap:1rem; justify-content:center; flex-wrap:wrap">
-        <a class="btn btn--primary" href="featured.html">Meet this week's cat</a>
-        <a class="btn btn--ghost" href="spots.html">Browse favorite spots</a>
-      </div>
+      <span class="trail-anchor" data-trail-anchor aria-hidden="true"></span>
     </section>
   </main>
 
